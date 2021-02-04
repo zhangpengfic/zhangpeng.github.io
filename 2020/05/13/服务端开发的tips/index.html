@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="一个收集网赚的站点">
+    <link rel="shortcut icon" href="http://some.url/to/favicon.ico">
+    <title>服务端开发的tips-Alfred爱肥爱妃</title>
+    
+        
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        
+    
+    
+<link rel="stylesheet" href="/css/adagio.css">
+
+    <script data-ad-client="ca-pub-3022945164825226" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div class="container-fluid">
+    <nav class="nav">
+        <div class="collapse navbar-collapse" id="navbar-sm">
+            
+            
+            <div class="navbar-nav">
+                <a href="/download/" class="nav-item nav-link">下载</a>
+            </div>
+            
+            <div class="navbar-nav">
+                <a href="/archives/" class="nav-item nav-link">归档</a>
+            </div>
+            
+            <div class="navbar-nav">
+                <a href="https://get.cryptobrowser.site/55/10978842" target="_blank" rel="noopener" class="nav-item nav-link">Google的挖矿浏览器</a>
+            </div>
+            
+            <div class="navbar-nav">
+                <a href="https://www.vultr.com/?ref=8413205-6G" target="_blank" rel="noopener" class="nav-item nav-link">vultr-建站VPS</a>
+            </div>
+            
+            <div class="navbar-nav">
+                <a href="/about/" class="nav-item nav-link">关于</a>
+            </div>
+            
+        </div>
+    </nav>
+</div>
+
+<div class="d-flex d-md-none" style="width: 100%; background-color: #e9ecef">
+    
+    <div class="nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-sm"
+            aria-expanded="false" aria-label="Toggle Navigation">
+            <i class="fas fa-bars fa-lg"></i>
+        </button>
+    </div>
+    
+    <nav class="navbar ml-auto">
+        <a class="navbar-brand" href="/">
+            
+            <img class="logo" src="/img/logo.jpg" />
+            
+        </a>
+    </nav>
+</div>
+
+
+<div class="container d-none d-md-block my-navbar">
+    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+        <a class="navbar-brand " href="/">
+            
+            <img class="logo" src="/img/logo.jpg" />
+            
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                <li class="nav-item pl-2 pr-2 ">
+                    <a class="nav-link" href="/download/">下载</a>
+                </li>
+                
+                <li class="nav-item pl-2 pr-2 ">
+                    <a class="nav-link" href="/archives/">归档</a>
+                </li>
+                
+                <li class="nav-item pl-2 pr-2 ">
+                    <a class="nav-link" href="https://get.cryptobrowser.site/55/10978842" target="_blank" rel="noopener">Google的挖矿浏览器</a>
+                </li>
+                
+                <li class="nav-item pl-2 pr-2 ">
+                    <a class="nav-link" href="https://www.vultr.com/?ref=8413205-6G" target="_blank" rel="noopener">vultr-建站VPS</a>
+                </li>
+                
+                <li class="nav-item pl-2 pr-2 ">
+                    <a class="nav-link" href="/about/">关于</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </nav>
+</div>
+
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        
+        <h1 class="mt-4 article-title page-title">服务端开发的tips</h1>
+        
+        <p class="lead text-gray mt-3">By 爱妃; Published on 2020-05-13</p>
+        
+        <div class="tags">
+            <ul class="tag-list">
+                
+                <li class="tag-list-item">
+                    <a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 pt-2">
+                <div class="row">
+                    <div class="col-12">
+                        <main>
+                            <article class="article-text page-content"><h1 id="七牛云CDN开启打开防盗链后的特征"><a href="#七牛云CDN开启打开防盗链后的特征" class="headerlink" title="七牛云CDN开启打开防盗链后的特征"></a>七牛云CDN开启打开防盗链后的特征</h1><p>如果全部生效后，复制的”内容管理“文件外链时就是：<a href="http://www.bbb.com/xxx.jpg，放到浏览器会显示403错误（浏览器不能访问目的达到了），而输入：http://www.aaa.com/share?url=http://www.bbb.com/xxx.jpg" target="_blank" rel="noopener">http://www.bbb.com/xxx.jpg，放到浏览器会显示403错误（浏览器不能访问目的达到了），而输入：http://www.aaa.com/share?url=http://www.bbb.com/xxx.jpg</a> 可以访问（白名单有的域名都可以访问，<a href="http://www.ccc.com/share?url=http://www.bbb.com/xxx.jpg" target="_blank" rel="noopener">http://www.ccc.com/share?url=http://www.bbb.com/xxx.jpg</a> 是访问不到的，还是403，因为<a href="http://www.ccc.com没在白名单里面）。当加速域名配好后，图片的下载速度也会增加一些。" target="_blank" rel="noopener">www.ccc.com没在白名单里面）。当加速域名配好后，图片的下载速度也会增加一些。</a><br>但是防止疯狂刷新要怎么解决？如果用<a href="http://www.aaa.com/share?url=http://www.bbb.com/xxx.jpg" target="_blank" rel="noopener">http://www.aaa.com/share?url=http://www.bbb.com/xxx.jpg</a> 还是可以访问到图片，还是可以刷新，关于这个问题的解决方法，我采取在代码中去解决：<br>1.给每张图片的观看次数做限制<br>2.给图片的url加密：<a href="http://www.aaa.com/share?url=时间戳+base64加密，避免在浏览器中看到图片名称" target="_blank" rel="noopener">http://www.aaa.com/share?url=时间戳+base64加密，避免在浏览器中看到图片名称</a></p>
+<h1 id="pip-生成和安装requirements-txt"><a href="#pip-生成和安装requirements-txt" class="headerlink" title="pip 生成和安装requirements.txt"></a>pip 生成和安装requirements.txt</h1><p>生成文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+<p>从requirements.txt安装依赖库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure>
+<p>当提示权限不够时，前面加上sudo</p>
+<h1 id="安装完nodejs输入：node-v-报错-gt-Segmentation-fault"><a href="#安装完nodejs输入：node-v-报错-gt-Segmentation-fault" class="headerlink" title="安装完nodejs输入：node -v 报错-&gt;Segmentation fault"></a>安装完nodejs输入：node -v 报错-&gt;Segmentation fault</h1><p>原因是软链的位置错误 ,正确的软链位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s &#x2F;root&#x2F;node-vxx.xx.x-linux-x64&#x2F;bin&#x2F;node &#x2F;usr&#x2F;local&#x2F;bin&#x2F;node</span><br><span class="line">ln -s &#x2F;root&#x2F;node-vxx.xx.x-linux-x64&#x2F;bin&#x2F;npm  &#x2F;usr&#x2F;local&#x2F;bin&#x2F;npm</span><br><span class="line">ln -s &#x2F;root&#x2F;node-vxx.xx.x-linux-x64&#x2F;bin&#x2F;npm  &#x2F;usr&#x2F;local&#x2F;bin&#x2F;npx</span><br></pre></td></tr></table></figure>
+
+<h1 id="node环境部署"><a href="#node环境部署" class="headerlink" title="node环境部署"></a>node环境部署</h1><h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><p>1.首先下载NodeJS的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;nodejs.org&#x2F;dist&#x2F;v12.14.0&#x2F;node-v12.14.0-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>node的历史版本可以在这里查看 <a href="https://nodejs.org/dist/" target="_blank" rel="noopener">https://nodejs.org/dist/</a></p>
+<p>2.下载后解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf node-v12.14.0-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>3.解压成功后就是二进制文件，只需要为node和npm建立两个软连接，使之可以全局运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s &#x2F;root&#x2F;node-v12.14.0-linux-x64&#x2F;bin&#x2F;node &#x2F;usr&#x2F;local&#x2F;bin&#x2F;node</span><br><span class="line">ln -s &#x2F;root&#x2F;node-v12.14.0-linux-x64&#x2F;bin&#x2F;npm  &#x2F;usr&#x2F;local&#x2F;bin&#x2F;npm</span><br><span class="line">ln -s &#x2F;root&#x2F;node-v12.14.0-linux-x64&#x2F;bin&#x2F;npm  &#x2F;usr&#x2F;local&#x2F;bin&#x2F;npx</span><br></pre></td></tr></table></figure>
+
+<p>其中/root/node-v12.14.0-linux-x64/bin/ 是你下载node的实际路径</p>
+<p>4.检查是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<p>5.安装yarn</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装mongodb（支持CentOS8）"><a href="#安装mongodb（支持CentOS8）" class="headerlink" title="安装mongodb（支持CentOS8）"></a>安装mongodb（支持CentOS8）</h2><p>1.首先下载mongodb的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;fastdl.mongodb.org&#x2F;linux&#x2F;mongodb-linux-x86_64-rhel80-4.4.0.tgz</span><br></pre></td></tr></table></figure>
+<p>2.下载后解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mongodb-linux-x86_64-rhel80-4.4.0.tgz</span><br></pre></td></tr></table></figure>
+<p>3.使之可以全局运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp &#x2F;root&#x2F;mongodb-linux-x86_64-rhel80-4.4.0&#x2F;bin&#x2F;* &#x2F;usr&#x2F;local&#x2F;bin&#x2F;  #centos8需要</span><br><span class="line">ln -s &#x2F;root&#x2F;mongodb-linux-x86_64-rhel80-4.4.0&#x2F;bin&#x2F;* &#x2F;usr&#x2F;local&#x2F;bin&#x2F;</span><br></pre></td></tr></table></figure>
+<p>4.启动mongodb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;var&#x2F;lib&#x2F;mongo</span><br><span class="line">mkdir -p &#x2F;var&#x2F;log&#x2F;mongodb</span><br><span class="line">chown &#96;whoami&#96; &#x2F;var&#x2F;lib&#x2F;mongo</span><br><span class="line">chown &#96;whoami&#96; &#x2F;var&#x2F;log&#x2F;mongodb</span><br><span class="line">mongod --dbpath &#x2F;var&#x2F;lib&#x2F;mongo --logpath &#x2F;var&#x2F;log&#x2F;mongodb&#x2F;mongod.log --fork</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="安装和使用pm2-进程管理器"><a href="#安装和使用pm2-进程管理器" class="headerlink" title="安装和使用pm2(进程管理器)"></a>安装和使用pm2(进程管理器)</h2><p><a href="https://blog.csdn.net/qq_36850813/article/details/98967807" target="_blank" rel="noopener">参考：pm2安装与使用（生产环境部署）</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn global add pm2</span><br><span class="line">npm install pm2 -g</span><br></pre></td></tr></table></figure>
+
+<h1 id="部署后台接口项目node-elm"><a href="#部署后台接口项目node-elm" class="headerlink" title="部署后台接口项目node-elm"></a>部署后台接口项目node-elm</h1><h2 id="进入本机项目node-elm路径，执行本机到服务器环境的部署（上线）"><a href="#进入本机项目node-elm路径，执行本机到服务器环境的部署（上线）" class="headerlink" title="进入本机项目node-elm路径，执行本机到服务器环境的部署（上线）"></a>进入本机项目node-elm路径，执行本机到服务器环境的部署（上线）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 deploy ecosystem.config.js production setup</span><br></pre></td></tr></table></figure>
+
+<h2 id="验证nodejs后台接口"><a href="#验证nodejs后台接口" class="headerlink" title="验证nodejs后台接口"></a>验证nodejs后台接口</h2><p>宝塔面板配置一个新的域名网站配置 / {:8001端口}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">location ^~ &#x2F;interface&#x2F; &#123;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;127.0.0.1:8001&#x2F;; #注意最后&#x2F;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">    &#125;</span><br><span class="line">    #proxy_pass http:&#x2F;&#x2F;127.0.0.1:8001&#x2F;;#有&#x2F;时转发路径</span><br><span class="line">    &#x3D;&gt; http:&#x2F;&#x2F;127.0.0.1:8001&#x2F;interface&#x2F;v2&#x2F;index_entry</span><br><span class="line">    #proxy_pass http:&#x2F;&#x2F;127.0.0.1:8001;#无&#x2F;时转发路径</span><br><span class="line">    &#x3D;&gt; http:&#x2F;&#x2F;127.0.0.1:8001&#x2F;v2&#x2F;index_entry</span><br></pre></td></tr></table></figure>
+<p>验证结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;root&#x2F;mygit&#x2F;node-elm&#x2F;source 上传文件后执行&lt;npm install&gt; &lt;npm run dev&gt;</span><br><span class="line">https:&#x2F;&#x2F;gnode.alfredzhang.tk&#x2F;interface&#x2F;v2&#x2F;index_entry #验证地址（DNS解析服务器IP）注意已经去掉:8001</span><br><span class="line">ss -lntpd #linux查看端口号占用</span><br><span class="line">lsof -i #mac查看端口号占用</span><br></pre></td></tr></table></figure>
+
+<h1 id="部署后台管理项目xk-vue-manage"><a href="#部署后台管理项目xk-vue-manage" class="headerlink" title="部署后台管理项目xk-vue-manage"></a>部署后台管理项目xk-vue-manage</h1><h2 id="进入本机项目xk-vue-manage路径-执行命令，去生成manage目录下的静态页面。"><a href="#进入本机项目xk-vue-manage路径-执行命令，去生成manage目录下的静态页面。" class="headerlink" title="进入本机项目xk-vue-manage路径,执行命令，去生成manage目录下的静态页面。"></a>进入本机项目xk-vue-manage路径,执行命令，去生成manage目录下的静态页面。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run build #遇到报错必须先全部解决</span><br></pre></td></tr></table></figure>
+<h2 id="上线验证"><a href="#上线验证" class="headerlink" title="上线验证"></a>上线验证</h2><p>将manage目录上传到gnode.alfredzhang.tk网站根目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;gnode.alfredzhang.tk&#x2F; #验证地址（DNS解析服务器IP）</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="svn最简便总结"><a href="#svn最简便总结" class="headerlink" title="svn最简便总结:"></a>svn最简便总结:</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.mkdir  svn</span><br><span class="line">2.svnadmin create &#x2F;home&#x2F;svn&#x2F;   (上面在哪里建就在哪里)!!!svnadmin create这里就是创建</span><br><span class="line">3.进入svnserver.conf  (必须)</span><br><span class="line">开启authz-db &#x3D; authz 和 password-db &#x3D; passwd 和 auth-access &#x3D; write</span><br><span class="line">开启anon-access &#x3D; read 且改为none</span><br><span class="line">4.进入passwd 加 root&#x3D;root</span><br><span class="line">5.进入authz加 [&#x2F;]和root &#x3D; rw</span><br><span class="line">6.svnserve -d -r &#x2F;home&#x2F;svn      (开启svn服务)</span><br><span class="line">7.cd到放代码的文件夹, 输入 svn co svn:&#x2F;&#x2F;自己的IP地址</span><br><span class="line">8.去阿里云开启3690端口 ( 自己博客里有教程 ) </span><br><span class="line">9.设置hooks自动提交代码到服务器</span><br><span class="line">10.能用了,在自己的电脑输入svn:&#x2F;&#x2F;IP地址  拉取</span><br></pre></td></tr></table></figure>
+
+<p>例子路径：/usr/local/svndata/repo/design<br>磁盘清理：<a href="https://www.cnblogs.com/iSun520/p/11189635.html" target="_blank" rel="noopener">https://www.cnblogs.com/iSun520/p/11189635.html</a><br>建立svn账号：<br>vim /usr/local/svndata/repo/design/conf/passwd<br>vim /usr/local/svndata/repo/design/conf/authz</p>
+<h1 id="mysql必须使用flush-privileges的两种情况"><a href="#mysql必须使用flush-privileges的两种情况" class="headerlink" title="mysql必须使用flush privileges的两种情况"></a>mysql必须使用flush privileges的两种情况</h1><p>FLUSH PRIVILEGES<br>1、改密码。<br>2、授权超用户。<br>flush privileges 命令本质上的作用是将当前user和privilige表中的用户信息/权限设置从mysql库(MySQL数据库的内置库)中提取到内存里。<br>MySQL用户数据和权限有修改后，希望在”不重启MySQL服务”的情况下直接生效，那么就需要执行这个命令。<br>通常是在修改ROOT帐号的设置后，怕重启后无法再登录进来，那么直接flush之后就可以看权限设置是否生效。而不必冒太大风险。<br>mysql 修改密码后，注意flush privileges。</p>
+<h1 id="php基础"><a href="#php基础" class="headerlink" title="php基础"></a>php基础</h1><h2 id="php端口"><a href="#php端口" class="headerlink" title="php端口"></a>php端口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1,8417端口：test.phjrxy.cn:8417</span><br><span class="line">api_nginx_rewriter:</span><br><span class="line">rewrite ^&#x2F;index2_liststock(.+)?$ &#x2F;index.php?c&#x3D;index2&amp;a&#x3D;apiliststock&amp;$1 last;</span><br><span class="line"></span><br><span class="line">2,80端口：test.phjrxy.cn:80</span><br><span class="line">web_nginx_rewriter:</span><br><span class="line">rewrite ^&#x2F;home_liststockfrompython(.+)?$ &#x2F;index.php?c&#x3D;home&amp;a&#x3D;liststockfrompython&amp;$1 last;</span><br></pre></td></tr></table></figure>
+
+<h2 id="php页面样式"><a href="#php页面样式" class="headerlink" title="php页面样式"></a>php页面样式</h2><p>无论哪个端口结果要做成接口的形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">controller:</span><br><span class="line">&#39;apiliststock&#39;&#x3D;&gt;1,&#x2F;&#x2F;这里数字无所谓好阅读而已</span><br><span class="line"></span><br><span class="line">public function apiListStockAction()&#123;   </span><br><span class="line">\Yaf_Dispatcher::getInstance()-&gt;disableView();&#x2F;&#x2F;不一定要可以直接写接口逻辑</span><br><span class="line">    	...接口逻辑</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>无论哪个端口结果要做成网页的形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">controller:</span><br><span class="line">&#39;liststockfrompython&#39;&#x3D;&gt;2,&#x2F;&#x2F;这里数字无所谓好阅读而已</span><br><span class="line"></span><br><span class="line">public function liststockfrompythonAction()&#123;       	</span><br><span class="line">    空什么都不用放</span><br><span class="line">&#125;</span><br><span class="line">view&#x2F;home&#x2F; 下做 liststockfrompython.phtml 页面</span><br></pre></td></tr></table></figure>
+
+<h2 id="php配置文件里的变量获取"><a href="#php配置文件里的变量获取" class="headerlink" title="php配置文件里的变量获取"></a>php配置文件里的变量获取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$url &#x3D; \Yaf_Registry::get(&#39;config&#39;)-&gt;apple-&gt;verify-&gt;url;</span><br></pre></td></tr></table></figure>
+
+<h2 id="php-token使用"><a href="#php-token使用" class="headerlink" title="php-token使用"></a>php-token使用</h2><p>token不需要存储的，你可以使用AES的可逆向加/解密算法对数据进行加密，如aes.ecode(userId+time+info+key(密钥))，生成token后把这个串传回给客户端，不需要保存，等下次他传回给你的时候你只需要aes.decode(token)解密一下就可以获得这里面的用户信息与当前登陆的用户信息对比一下就行了<br>aes的方法：<a href="https://www.cnblogs.com/mark-wu/p/6878947.html" target="_blank" rel="noopener">https://www.cnblogs.com/mark-wu/p/6878947.html</a></p>
+<h2 id="php-登录结构"><a href="#php-登录结构" class="headerlink" title="php 登录结构"></a>php 登录结构</h2><p>1，所有类型登录接口，根据所在接口拿的用户信息，在user表查询phone，和wx_unionId,<br>如果有：就记录UserLearnLog表，更新UserDetail表用户信息，获取用户的标签。<br>如果无：插入user表并完成有的其他步骤。</p>
+<p>2，所有类型绑定接口，根据所在接口拿的用户信息，在user表查询phone，和wx_unionId,</p>
+<p>如果有：有1-n条记录各种类型数据的合并。记录绑定日志。Mission表完成绑定任务</p>
+<p>如果无：将信息插入user表绑定，记录绑定日志。</p>
+<p>绑定日志：/home/webserver/logs/php_logs/wxbind.log</p>
+<h2 id="php-js分享结构"><a href="#php-js分享结构" class="headerlink" title="php-js分享结构"></a>php-js分享结构</h2><p>//定义了方法从weixin_share接口拿到，签名，后台配置文案再</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;js&#x2F;wxutils&#x2F;wxshare-v2.js?v&#x3D;3&quot;&gt;</span><br><span class="line">	&lt;&#x2F;script&gt;</span><br><span class="line">&#x2F;&#x2F;通过以下方法调用</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">		var param &#x3D; new Array();</span><br><span class="line">		param[&#39;user_id&#39;] &#x3D; &#39;&lt;?php echo $user[&#39;id&#39;] ;?&gt;&#39;;</span><br><span class="line">		var missionId &#x3D; 1009;</span><br><span class="line">		wxShare (&quot;1017&quot;, param, missionId);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>问题：一个微信公众号页面循环分享不了。<br>答案：写死了URL要动态获取当前的网络地址，更新签名才正确。<br>encodeURIComponent(location.href.split(‘#’).toString()); 这个动态获取url可以重新正确签名所以就可以循环分享</p>
+<h2 id="php微信公众号开发"><a href="#php微信公众号开发" class="headerlink" title="php微信公众号开发"></a>php微信公众号开发</h2><p>允许用户让第三方应用访问该用户在某一网站上存储的私密的资源（如照片，视频，联系人列表）<br><a href="https://www.cnblogs.com/0201zcr/p/5131602.html" target="_blank" rel="noopener">微信公众平台开发——微信授权登录（OAuth2.0）</a></p>
+<h2 id="微信支付证书续期"><a href="#微信支付证书续期" class="headerlink" title="微信支付证书续期"></a>微信支付证书续期</h2><p>证书路径：/Users/Alfred/Documents/Soursetree/prjy_api/library/weixin/cert<br>查看网址：<a href="https://myssl.com/cert_decode.html" target="_blank" rel="noopener">https://myssl.com/cert_decode.html</a><br><img src="1.png" alt=""><br>帮助中心：<a href="https://kf.qq.com/faq/180824JvUZ3i180824YvMNJj.html" target="_blank" rel="noopener">https://kf.qq.com/faq/180824JvUZ3i180824YvMNJj.html</a></p>
+<h1 id="linux基础"><a href="#linux基础" class="headerlink" title="linux基础"></a>linux基础</h1><h2 id="一些常用linux指令"><a href="#一些常用linux指令" class="headerlink" title="一些常用linux指令"></a>一些常用linux指令</h2><p>查看config.josn文件的路径：find / -name config.json<br>看linux操作系统版本：lsb_release -a<br>查看centos系统版本：cat /etc/redhat-release<br>ls | more 分页查看<br>ls -l 查看软链<br>查看端口占用1：netstat -anlp | grep 80<br>查看端口占用2：ss -lntpd<br>mac查看端口号占用: lsof -i<br>ps -aux | grep (svn nginx apache php…) 查看进程<br>env 查看环境变量<br>zip -r prjy_api.zip prjy_api  将prjy_api文件夹压缩成prjy_api.zip<br>unzip prjy_api.zip 在当前目录下直接解压prjy_api.zip<br>内存使用 ：用top命令<br>删除路径：rm -rf /usr/local/svndata/repo/design<br>查看磁盘：df<br>查看目录大小：<br>1.通过命令du -h –max-depth=1 *,可以查看当前目录下各文件、文件…<br>2.同样,通过命令du -h –max-depth=0 *,可以只显示直接子目录文件…<br>3.如果只想查看指定目录的总大小,可以使用du -sh 目录名称</p>
+<h2 id="linux文件夹权限"><a href="#linux文件夹权限" class="headerlink" title="linux文件夹权限"></a>linux文件夹权限</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">chown -R webserver:webserver &#x2F;home&#x2F;webserver&#x2F;prjy&#x2F;prjy_api&#x2F;application&#x2F;views&#x2F;</span><br><span class="line">chmod -R 771 &#x2F;home&#x2F;webserver&#x2F;prjy&#x2F;prjy_api&#x2F;application&#x2F;views&#x2F;</span><br><span class="line">chown -R webserver:webserver &#x2F;home&#x2F;webserver&#x2F;.ssh&#x2F;</span><br><span class="line"></span><br><span class="line">#最后：chmod 755 gitcode.sh #root给可执行权限，&#x2F;usr&#x2F;local下环境变量执行。</span><br><span class="line">#-rw------- (600) 只有所有者才有读和写的权限</span><br><span class="line">#-rw-r--r-- (644) 只有所有者才有读和写的权限，组群和其他人只有读的权限</span><br><span class="line">#-rwx------ (700) 只有所有者才有读，写，执行的权限</span><br><span class="line">#-rwxr-xr-x (755) 只有所有者才有读，写，执行的权限，组群和其他人只有读和执行的权限</span><br><span class="line">#-rwx--x--x (711) 只有所有者才有读，写，执行的权限，组群和其他人只有执行的权限</span><br><span class="line">#-rw-rw-rw- (666) 每个人都有读写的权限</span><br><span class="line">#-rwxrwxrwx (777) 每个人都有读写和执行的权限</span><br></pre></td></tr></table></figure>
+<h2 id="linux定时任务"><a href="#linux定时任务" class="headerlink" title="linux定时任务"></a>linux定时任务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -l &#x2F;&#x2F;查看</span><br><span class="line">crontab -e &#x2F;&#x2F;修改</span><br></pre></td></tr></table></figure>
+
+<p>例如：分钟 小时 日 月 周      &amp;&amp;指执行第一句成功后执行，      &gt;/dev/null 2&gt;&amp;1表示输出到空2指错误，&amp;1指/dev/null </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * * * * cd &#x2F;home&#x2F;webserver&#x2F;prjy&#x2F;prjy_api&#x2F;script&#x2F;crontab &amp;&amp; &#x2F;usr&#x2F;bin&#x2F;php check_timeout_group_and_refund.php &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="一个经典项目的部署"><a href="#一个经典项目的部署" class="headerlink" title="一个经典项目的部署"></a>一个经典项目的部署</h1><h2 id="ssh-用户名-我的服务器的ip-p-22-端口22"><a href="#ssh-用户名-我的服务器的ip-p-22-端口22" class="headerlink" title="ssh 用户名@我的服务器的ip -p 22(端口22)"></a>ssh 用户名@我的服务器的ip -p 22(端口22)</h2><p>用户名@我的服务器的ip’s password: （这里需要手动输入密码后回车）</p>
+<h2 id="ssh-keygen-t-rsa"><a href="#ssh-keygen-t-rsa" class="headerlink" title="ssh-keygen -t rsa"></a>ssh-keygen -t rsa</h2><p>一路回车在当前用户的根目录下的.ssh目录生成id_rsa.pub公钥<br>将本地生成的公钥拷贝到远程服务器的下并改名为authorized_keys</p>
+<h2 id="文件同步"><a href="#文件同步" class="headerlink" title="文件同步"></a>文件同步</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line">src_file&#x3D;&#x2F;home&#x2F;webserver&#x2F;mmgitlab&#x2F;prjy_api&#x2F;application&#x2F;</span><br><span class="line">dest_file&#x3D;&#x2F;home&#x2F;webserver&#x2F;prjy&#x2F;prjy_api&#x2F;application&#x2F;</span><br><span class="line"></span><br><span class="line">if [ -f $src_file ] || [ -d $src_file ]; then</span><br><span class="line">    rsync -vaz $src_file $dest_file</span><br><span class="line">else echo &quot;error&quot;</span><br><span class="line">fi</span><br><span class="line">#前提：从fc1上拉代码到mmgitlab的相应目录下</span><br><span class="line">#注意：路径要以&#x2F;结尾代表目录</span><br><span class="line">#rsync -vaz &#x2F;home&#x2F;webserver&#x2F;mmgitlab&#x2F;prjy_api&#x2F;application&#x2F;views&#x2F;home&#x2F; webserver@119.29.89.166:&#x2F;home&#x2F;webserver&#x2F;tmp&#x2F;home&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>1 从仓库里同步先同步View的home目录一个个来，后续逐步实现第二步。<br>2 同步测试服-  <a href="mailto:webserver@10.1.0.6">webserver@10.1.0.6</a>:的/prjy/prjy_api，本机不写ip就不用输密码<br>  同步fc1- <a href="mailto:webserver@119.29.89.166">webserver@119.29.89.166</a>:的/publish/prjy_api（暂时只同步测试服）<br>3 省去了手动上传fc1的尴尬，最后上线还是登录fc1 运行publish.sh</p>
+<h2 id="服务器上git仓"><a href="#服务器上git仓" class="headerlink" title="服务器上git仓"></a>服务器上git仓</h2><p>nginx配置结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf -&gt; lnTo -&gt;</span><br><span class="line">&#x2F;home&#x2F;webserver&#x2F;prjy&#x2F;prjy_api&#x2F;conf</span><br></pre></td></tr></table></figure>
+
+<p>任务写gitcode.sh脚本先上mmgitlab模仿正式服。<br>先上publish后用publish.sh脚本同步去prjy。</p>
+<p>第一次建立git仓库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone http:&#x2F;&#x2F;203.195.173.251&#x2F;mmjrxy&#x2F;prjy_api.git</span><br><span class="line">cd prjy_api</span><br><span class="line">git checkout dev</span><br><span class="line">之后：</span><br><span class="line">git pull</span><br><span class="line">git show --stat</span><br></pre></td></tr></table></figure>
+
+<p>同步服务器的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -vaz $src_file webserver@（服务器IP地址）:$dest_file</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="万无一失的同步上线application"><a href="#万无一失的同步上线application" class="headerlink" title="万无一失的同步上线application"></a>万无一失的同步上线application</h2><p>tester｜fc1<br>1，拉FC1的public代码到本地<br>2，git同步到本地gitlab同步目录的application目录。检查问题，并提交git。<br>3，git同步到tester的gitlab同步目录。<br>4，同步tester:gitlab-&gt;tester:prjy tester执行./gitcode.sh ，（检查脚本application目录，一定要tester能正常工作。如果失败把备份的测试环境代码覆盖去tester的application目录git回滚）<br>5，同步tester:prjy-&gt;fc1:publish，tester执行./sendpublish.sh<br>6，fc1执行publish.sh上线正式环境。</p>
+<h2 id="普通上线"><a href="#普通上线" class="headerlink" title="普通上线"></a>普通上线</h2><p>1，提交git<br>2，tester: cd mmgitlab/prjy_api; git pull; git show –stat<br>3，tester: cd ~; ./gitcode.sh<br>4，tester: cd ~; ./sendpublish.sh<br>5，fc1: publish.sh</p>
+<h2 id="正式服负载均衡路径"><a href="#正式服负载均衡路径" class="headerlink" title="正式服负载均衡路径"></a>正式服负载均衡路径</h2><p>接口：<a href="https://ssl.phjrxy.cn/" target="_blank" rel="noopener">https://ssl.phjrxy.cn/</a><br>111.230.217.176:3344-&gt;<br>119.29.89.166:8417，119.29.82.124:8417<br>网页：<a href="https://phjrxy.cn/" target="_blank" rel="noopener">https://phjrxy.cn/</a><br>111.230.217.176:80-&gt;<br>119.29.89.166:1814，119.29.82.124:1814</p>
+<h2 id="重新搭建php学院后台在ranknerd的宝塔里"><a href="#重新搭建php学院后台在ranknerd的宝塔里" class="headerlink" title="重新搭建php学院后台在ranknerd的宝塔里"></a>重新搭建php学院后台在ranknerd的宝塔里</h2><p>预检查<br>查看yaf版本： php –ri yaf<br>查看yaf配置：php -i | grep yaf<br>Memcached查看版本：telnet localhost 11211回车后打 stats<br>Memcached查看配置：/etc/sysconfig/memcached 配置port:11211-&gt;11511</p>
+<p>1，先建站/home/webserver/prjy/prjy_api/public(必须删除原始所有文件！！！)<br>上传备份代码和数据库。</p>
+<p>2，宝塔php安装yaf，Memcached，插件</p>
+<p>3，修改memcached 配置port:11211-&gt;11511</p>
+<p>4，添加数据库fc Mysql 配置 port：3306-&gt;3316</p>
+<p>5，修改php配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error_reporting &#x3D; E_ALL &amp; ~E_DEPRECATED &amp; ~E_NOTICE &amp; ~E_STRICT &amp; ~E_WARNING</span><br></pre></td></tr></table></figure>
+
+<p>6，修改index.php “/conf/application12.ini”（已经git了，重备份就好，留在这里还原记录下）</p>
+<p>7，修改application12.ini（已经git了，重备份就好，留在这里还原记录下）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">;域名配置</span><br><span class="line">;mysql配置</span><br><span class="line">;任务队列</span><br></pre></td></tr></table></figure>
+
+<p>8。web配在原有宝塔的直接修改宝塔配置把web的rewrite抄过来（宝塔里修改）<br>可选方案1（V）<br>(接口和网页统一用Https接口必须排前重复的都是一样的接口)：统一用443安全</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include &#x2F;home&#x2F;webserver&#x2F;prjy&#x2F;prjy_api&#x2F;conf&#x2F;api_nginx_rewrite;</span><br><span class="line">include &#x2F;home&#x2F;webserver&#x2F;prjy&#x2F;prjy_api&#x2F;conf&#x2F;web_nginx_rewrite;</span><br></pre></td></tr></table></figure>
+
+<p>可选方案2（X）<br>(还原老架构接口和网页用Http分不同端口8417和80端口)：<br>ln -s /home/webserver/prjy/prjy_api/conf/fc_apis.conf /www/server/panel/vhost/nginx/fc_apis.conf<br>添加文件/www/server/nginx/logs/prjy_api.log<br>修改fc_*.conf的所有日志路径<br>宝塔放行端口8417接口</p>
+<p>9，最后上服务器定时任务<br>crontab -e 恢复备份里的定时任务条目</p>
+<p>10，后期关注7牛的链接</p>
+<h1 id="以肿瘤化疗助手APP为例，配置微信分享的Universal-Links"><a href="#以肿瘤化疗助手APP为例，配置微信分享的Universal-Links" class="headerlink" title="以肿瘤化疗助手APP为例，配置微信分享的Universal Links"></a>以肿瘤化疗助手APP为例，配置微信分享的Universal Links</h1><p>在<em>open开放平台</em>和在 <em>iOS AppDelegate</em>下设置一致的带Path（例如doctor/）的Universal Links:<br><a href="https://lt.e-interconnection.com/doctor/" target="_blank" rel="noopener">https://lt.e-interconnection.com/doctor/</a></p>
+<p>配服务器<a href="https://lt.e-interconnection.com/apple-app-site-association：" target="_blank" rel="noopener">https://lt.e-interconnection.com/apple-app-site-association：</a><br>“/web/share_doctor_client” 为分享网页的路径<br>“/doctor/*” 这里的doctor就是Universal Links的Path<br>{<br>  “applinks”: {<br>    “apps”: [</p>
+<pre><code>],
+&quot;details&quot;: [
+  {
+    &quot;appID&quot;: &quot;9GVA5G7QYT.com.youguihua.chdrug&quot;,
+    &quot;paths&quot;: [
+      &quot;/web/share_doctor_client&quot;,
+      &quot;/doctor/*&quot;
+    ]
+  }
+]</code></pre><p>  }<br>}</p>
+<p>其他常见Universal Links 的问题参考：<br><a href="https://developers.weixin.qq.com/community/develop/article/doc/0004c6531d023056147aea99256813" target="_blank" rel="noopener">https://developers.weixin.qq.com/community/develop/article/doc/0004c6531d023056147aea99256813</a></p>
+</article>
+                        </main>
+                        
+                        
+                    </div>
+                </div>
+                <div class="row mt-5 mb-5">
+                    <div class="col-12">
+                        <div class="row">
+    <div class="col">
+        <nav aria-label="paginator" class="paginator">
+            <ul class="pagination d-none d-md-flex pagination-lg justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/2020/07/21/%E7%9C%81%E9%92%B1APP/"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            省钱APP</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/2020/04/30/%E5%85%B6%E4%BB%96%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E6%8E%A8%E8%8D%90/"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true">其他数字货币推荐
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pagination d-md-none justify-content-center">
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/2020/07/21/%E7%9C%81%E9%92%B1APP/"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;
+                            省钱APP</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a class="page-link"
+                        href="/2020/04/30/%E5%85%B6%E4%BB%96%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E6%8E%A8%E8%8D%90/"
+                        aria-label="Next">
+                        <span
+                            aria-hidden="true">其他数字货币推荐
+                            &raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+                    </div>
+                </div>
+
+                <!-- 判断是否需要评论 -->
+                
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div id="vcomment"></div>
+                    </div>
+                </div>
+                
+                <!-- 判断是否需要评论 -->
+                
+            </div>
+            <div class="col-md-3">
+                <div class="container pt-4 page-sidebar">
+                    
+                    <hr class="row">
+                    <div class="row toc-container">
+                        <div class="col-12">
+                            <h6>NAVIGATION</h6>
+                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#七牛云CDN开启打开防盗链后的特征"><span class="toc-text">七牛云CDN开启打开防盗链后的特征</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pip-生成和安装requirements-txt"><span class="toc-text">pip 生成和安装requirements.txt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装完nodejs输入：node-v-报错-gt-Segmentation-fault"><span class="toc-text">安装完nodejs输入：node -v 报错-&gt;Segmentation fault</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#node环境部署"><span class="toc-text">node环境部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mongodb（支持CentOS8）"><span class="toc-text">安装mongodb（支持CentOS8）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装和使用pm2-进程管理器"><span class="toc-text">安装和使用pm2(进程管理器)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署后台接口项目node-elm"><span class="toc-text">部署后台接口项目node-elm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进入本机项目node-elm路径，执行本机到服务器环境的部署（上线）"><span class="toc-text">进入本机项目node-elm路径，执行本机到服务器环境的部署（上线）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证nodejs后台接口"><span class="toc-text">验证nodejs后台接口</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署后台管理项目xk-vue-manage"><span class="toc-text">部署后台管理项目xk-vue-manage</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进入本机项目xk-vue-manage路径-执行命令，去生成manage目录下的静态页面。"><span class="toc-text">进入本机项目xk-vue-manage路径,执行命令，去生成manage目录下的静态页面。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上线验证"><span class="toc-text">上线验证</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#svn最简便总结"><span class="toc-text">svn最简便总结:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql必须使用flush-privileges的两种情况"><span class="toc-text">mysql必须使用flush privileges的两种情况</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#php基础"><span class="toc-text">php基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#php端口"><span class="toc-text">php端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php页面样式"><span class="toc-text">php页面样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php配置文件里的变量获取"><span class="toc-text">php配置文件里的变量获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php-token使用"><span class="toc-text">php-token使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php-登录结构"><span class="toc-text">php 登录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php-js分享结构"><span class="toc-text">php-js分享结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php微信公众号开发"><span class="toc-text">php微信公众号开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微信支付证书续期"><span class="toc-text">微信支付证书续期</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#linux基础"><span class="toc-text">linux基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些常用linux指令"><span class="toc-text">一些常用linux指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux文件夹权限"><span class="toc-text">linux文件夹权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux定时任务"><span class="toc-text">linux定时任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一个经典项目的部署"><span class="toc-text">一个经典项目的部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh-用户名-我的服务器的ip-p-22-端口22"><span class="toc-text">ssh 用户名@我的服务器的ip -p 22(端口22)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh-keygen-t-rsa"><span class="toc-text">ssh-keygen -t rsa</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件同步"><span class="toc-text">文件同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器上git仓"><span class="toc-text">服务器上git仓</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#万无一失的同步上线application"><span class="toc-text">万无一失的同步上线application</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#普通上线"><span class="toc-text">普通上线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正式服负载均衡路径"><span class="toc-text">正式服负载均衡路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重新搭建php学院后台在ranknerd的宝塔里"><span class="toc-text">重新搭建php学院后台在ranknerd的宝塔里</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#以肿瘤化疗助手APP为例，配置微信分享的Universal-Links"><span class="toc-text">以肿瘤化疗助手APP为例，配置微信分享的Universal Links</span></a></li></ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <div class="jumbotron jumbotron-fluid mb-0">
+        <div class="container-fluid">
+            <div class="col text-center">
+                <div class="bottom-social">
+                    <div class="row">
+    <div class="col text-center">
+        <ul class="list-inline">
+            
+            <li class="list-inline-item">
+                
+                <a href="https://github.com/zhangpengfic" target="_blank" rel="noopener">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+            <li class="list-inline-item">
+                
+                <a href="https://www.facebook.com/profile.php?id=100046233373942" target="_blank" rel="noopener">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+            <li class="list-inline-item">
+                
+                <a href="https://twitter.com/zhangpengfic" target="_blank" rel="noopener">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+            <li class="list-inline-item">
+                
+                <a href="https://www.linkedin.com/in/peng-zhang-alfred" target="_blank" rel="noopener">
+                    <span class="fa-stack fa-2x icon-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+                
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+                </div>
+                <p class="copyright text-muted">
+                    Copyright &copy; Alfred
+                    <!-- 网赚项目 -->
+                    <br>
+                    Thanks for coming!
+                    <br>invite people to your mining network
+                    <!-- <a href="https://github.com/Hanlin-Dong/hexo-theme-adagio" target="_blank" rel="noopener">Adagio</a> - A <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> theme made with love by -->
+                    <a href="https://get.cryptobrowser.site/10978842" target="_blank" rel="noopener">cryptobrowser</a>.
+                    <br>
+                    <a>粤ICP备18051266号-1</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+        
+            <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({
+                    CommonHTML: { linebreaks: { automatic: true } },
+                    "HTML-CSS": { linebreaks: { automatic: true } },
+                    SVG: { linebreaks: { automatic: true } }
+                });
+            </script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
+            </script>
+        
+    
+
+
+
+<script src="/js/av.min.js"></script>
+
+
+<script src="/js/valine.min.js"></script>
+
+
+<script src="/js/applause-easy.js"></script>
+
+
+<script>
+$(document).ready(function() {
+    var a = new ApplauseEasy({
+        id: 'applause-easy',
+        appId: "xxxxxxxxxx",
+        appKey: "xxxxxxxxxx",
+        img_src: "http://img.hanlindong.com/blog/site/clap.png",
+        img_width: "50px",
+        img_height: "50px"
+    })
+})
+</script>
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?123456789";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-11111111-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-11111111-1');
+</script>
+
+
+    
+    <script>
+    new Valine({
+        el: "#vcomment",
+        appId: "48PAGRTdSvcchFjx2ze4DQhT-gzGzoHsz",
+        appKey: "w2hMFJIgbFgYk6WIOzlkxCUG",
+        notify: false,
+        varify: false,
+        avatar: 'identicon',
+        placeholder: "请您点击这里发表下看法吧!",
+        recordIP: true
+    })
+</script>
+    
+</body>
+</html>
