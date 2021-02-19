@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://btcoin.monster/about/</loc>
+    
+    <lastmod>2021-02-19T19:33:17.562Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://btcoin.monster/2020/04/01/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84tips/</loc>
     
     <lastmod>2021-02-19T13:18:38.407Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>https://btcoin.monster/2020/04/16/%E7%BD%91%E7%BB%9C%E8%B0%83%E7%A0%94%E8%B5%9A%E9%92%B1/</loc>
     
     <lastmod>2020-07-21T00:33:42.533Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://btcoin.monster/about/</loc>
-    
-    <lastmod>2020-04-03T01:49:10.787Z</lastmod>
     
   </url>
   
