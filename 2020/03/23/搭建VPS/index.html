@@ -199,7 +199,7 @@
 <p>5，启动服务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl start trojan</span><br><span class="line">systemctl enable trojan</span><br><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
 <p>去trojan-qt5 配置端口和密码直到访问到google</p>
-<p>6，安装BT面板并修复v2ray的nginx和宝塔面板的nginx的冲突<br>安装BT面板脚本</p>
+<p>6，安装BT面板并装好nodeJS站点后修复v2ray的nginx和宝塔面板的nginx的冲突<br>安装BT面板脚本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh https:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
 <p>/etc/nginx/conf/nginx.conf 中增加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include &#x2F;www&#x2F;server&#x2F;panel&#x2F;vhost&#x2F;nginx&#x2F;gnode.alfredzhang.tk.conf;</span><br></pre></td></tr></table></figure>
