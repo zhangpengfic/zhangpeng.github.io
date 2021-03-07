@@ -181,7 +181,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mongodb-linux-x86_64-rhel80-4.4.0.tgz</span><br></pre></td></tr></table></figure>
 <p>3.使之可以全局运行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp &#x2F;root&#x2F;mongodb-linux-x86_64-rhel80-4.4.0&#x2F;bin&#x2F;* &#x2F;usr&#x2F;local&#x2F;bin&#x2F;  #centos8需要</span><br><span class="line">ln -s &#x2F;root&#x2F;mongodb-linux-x86_64-rhel80-4.4.0&#x2F;bin&#x2F;* &#x2F;usr&#x2F;local&#x2F;bin&#x2F;</span><br></pre></td></tr></table></figure>
-<p>4.启动mongodb</p>
+<p>4.启动mongodb <strong><em>每次vps重启后都要再启动一次</em></strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;var&#x2F;lib&#x2F;mongo</span><br><span class="line">mkdir -p &#x2F;var&#x2F;log&#x2F;mongodb</span><br><span class="line">chown &#96;whoami&#96; &#x2F;var&#x2F;lib&#x2F;mongo</span><br><span class="line">chown &#96;whoami&#96; &#x2F;var&#x2F;log&#x2F;mongodb</span><br><span class="line">mongod --dbpath &#x2F;var&#x2F;lib&#x2F;mongo --logpath &#x2F;var&#x2F;log&#x2F;mongodb&#x2F;mongod.log --fork</span><br></pre></td></tr></table></figure>
 
 
