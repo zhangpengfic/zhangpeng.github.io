@@ -150,7 +150,7 @@
                     <div class="col-12">
                         <main>
                             <article class="article-text page-content"><h1 id="建立google-VM"><a href="#建立google-VM" class="headerlink" title="建立google VM"></a>建立google VM</h1><p>1，创建VPS选最低的配置<br>2，打开防火墙，配置ip0.0.0.0/0<br>3，vpc网络-&gt;外部IP地址 设置类型静态<br>4，修改root密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su do</span><br><span class="line">passwd</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">passwd</span><br></pre></td></tr></table></figure>
 <p>5，防火墙开启端口，准备root登录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;1234&#x2F;tcp --permanent</span><br><span class="line">systemctl restart firewalld #重启防火墙</span><br><span class="line">firewall-cmd --query-port&#x3D;1234&#x2F;tcp --zone&#x3D;public #查询结果</span><br></pre></td></tr></table></figure>
 <p>6，修改ssh设置，准备root登录</p>
