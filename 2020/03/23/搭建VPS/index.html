@@ -167,7 +167,7 @@
 <p>5，去DNS解析域名 (变换).alfredzhang.com<br>二级变换域名。目的是保证安装证书成功（解决证书失效每次都是新证书，详情看acme配置）</p>
 <p>6，安装网盘网站<br>网站-&gt;添加站点(数据库和FTP不创建)-&gt;删除根目录下文件-&gt; 上传veno-file-manager-v3.4.8 -&gt; 解压找到vfm下<strong>所有文件</strong>覆盖到根目录下 -&gt; 重启nginx -&gt; 进入网盘 密码（admin:password）</p>
 <p>7，安装ssl证书<br>网站-&gt;站点设置-&gt;ssl-&gt;let’s encrypt-&gt; 强制HTTPS</p>
-<p>8 安装V2ary</p>
+<p>8 安装V2ary(这个脚本有问题了要找新的)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;FunctionClub&#x2F;V2ray.Fun&#x2F;master&#x2F;install.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
 <p>nginx配置：<br>网站-&gt;站点设置-&gt;配置文件里添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location &#x2F;zp &#123;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;127.0.0.1:56331;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
